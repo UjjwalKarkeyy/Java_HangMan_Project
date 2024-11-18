@@ -11,3 +11,4 @@ public class GuessCharac {
         return c;
     }
 }
+

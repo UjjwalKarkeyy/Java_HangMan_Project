@@ -27,3 +27,4 @@ public class CheckCharacter {
         return ori_indx;
     }
 }
+
