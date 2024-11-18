@@ -2,10 +2,11 @@ public class CheckCharacter {
     
     int[] check_return(char[] ori, char charac)
     {
-        int[] characs_at = {-1};
+        int length = ori.length;
+        int[] characs_at = new int[length];
         int indx = 0;
 
-        for(int i = 0; i < (ori.length); i++)
+        for(int i = 0; i < (length); i++)
         {
             if(ori[i] == charac)
             {
@@ -14,13 +15,13 @@ public class CheckCharacter {
             }
         }
 
-        return characs_at;
-    }
+        int[] ori_indx = new int[indx];
 
-    // public static void main(String[] args) {
-    //     CheckCharacter check = new CheckCharacter();
-    //     char[] ori = {'a','p','p','l','e'};
-    //     int[] re = check.check_return(ori,'a');
-    //     System.out.println(Arrays.toString(re));
-    // }
+        for(int i = 0; i < indx; i++)
+        {
+            ori_indx[i] = characs_at[i];
+        }
+
+        return ori_indx;
+    }
 }
