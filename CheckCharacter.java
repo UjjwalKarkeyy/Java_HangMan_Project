@@ -1,3 +1,5 @@
+// Use array knowledge to check if there are still any questions here or not. DON'T RUSH TAKE TIME!!
+
 public class CheckCharacter {
     
     int[] check_return(char[] ori, char charac)

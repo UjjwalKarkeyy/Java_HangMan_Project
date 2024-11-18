@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 public class HostInput {
 
-    char[] takeInput()
-    {
-        Scanner obj = new Scanner(System.in);
+    char[] takeInput(Scanner sc)
+    {        
         System.out.print("Enter the Word: ");
-        String word = obj.nextLine();
+        String word = sc.nextLine();
         char[] arr_word = word.toLowerCase().toCharArray();
+
         return arr_word;
     }
 }
