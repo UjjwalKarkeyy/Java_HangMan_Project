@@ -1,5 +1,5 @@
-public class UserInterface {
-
+public class UserInterface 
+{
     void play(int size) 
     {
         int i = 0;
@@ -13,38 +13,34 @@ public class UserInterface {
 
     void hangMan(int life) 
     {
-        StringBuilder body = new StringBuilder();
-        int count = 0;
-
         System.out.println("---------");
-        char[] hangman_body = {'I','O','|','/', '|' ,'\\','/','\\'};
 
-        for(char i : hangman_body)
-        {
-            if(count == life)
-            {
+        switch (life) {
+            case 1:
+                System.out.println(" |");
                 break;
-            }
- 
-            if(life > 3)
-            {
-
-            }
-
-            else if(life < 4)
-            {
-                body.append(" " + i + "\n");
-                count++;
-            }
+            case 2:
+                System.out.println(" |\n O");
+                break;
+            case 3:
+                System.out.println(" |\n O\n |");
+                break;
+            case 4:
+                System.out.println(" |\n O\n/|");
+                break;
+            case 5:
+                System.out.println(" |\n O\n/|\\");
+                break;
+            case 6:
+                System.out.println(" |\n O\n/|\\\n/");
+                break;
+            case 7:
+                System.out.println(" |\n O\n/|\\\n/ \\");
+                break;
+        
+            default:
+                System.out.println("!!!Failed to show hangman!!!");
+                break;
         }
-
-        System.out.println(body);
-    }
-
-    public static void main(String[] args)
-
-    { 
-        UserInterface ui = new UserInterface();
-        ui.hangMan(3);
     }
 }

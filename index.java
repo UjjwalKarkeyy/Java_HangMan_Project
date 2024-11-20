@@ -50,6 +50,7 @@ public class index
         else
         {
             ui.hangMan(life);
+            life++;
         }
 
         sc.close();
