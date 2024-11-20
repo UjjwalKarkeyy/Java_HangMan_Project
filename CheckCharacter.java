@@ -6,6 +6,7 @@ public class CheckCharacter {
     {
         int length = ori.length;
         int[] characs_at = new int[length];
+        characs_at[0] = -1; // This lets me know if the entered character was on the string or not.
         int indx = 0;
 
         for(int i = 0; i < (length); i++)
@@ -17,14 +18,24 @@ public class CheckCharacter {
             }
         }
 
-        int[] ori_indx = new int[indx];
-
-        for(int i = 0; i < indx; i++)
+        
+        if(characs_at[0] == -1)
         {
-            ori_indx[i] = characs_at[i];
+            return characs_at;
         }
+        
+        else
+        {
+            int[] ori_indx;
+            ori_indx = new int[indx];
 
-        return ori_indx;
+            for(int i = 0; i < indx; i++)
+            {
+                ori_indx[i] = characs_at[i];
+            }
+
+            return ori_indx;
+        }
     }
 }
 
