@@ -24,35 +24,41 @@ public class index
         }
 
         ui.play(size);
-
-        // Taking player's guessed character
-        char charac = guess_charac.guess(sc);
-        int[] indxs= check_charac.check_return(re, charac);
-
-        if(indxs[0] != -1)
+        while(life < 8)
         {
+            // Taking player's guessed character
+            char charac = guess_charac.guess(sc);
+            int[] indxs= check_charac.check_return(re, charac);
 
-            for(int i = 0; i < indxs.length; i++)
+            if(indxs[0] != -1)
             {
-                word[indxs[i]] = charac;
+
+                for(int i = 0; i < indxs.length; i++)
+                {
+                    word[indxs[i]] = charac;
+                }
+
+                ui.play(size);
+
+                for(int i = 0; i<word.length; i++)
+                {
+                    System.out.print(word[i] + " ");
+                }  
+
+                System.out.println();
+                if(Arrays.equals(word, re))
+                {
+                    System.out.println("You won!");
+                    break;
+                }
             }
-            
-            ui.play(size);
 
-            for(int i = 0; i<word.length; i++)
+            else
             {
-                System.out.print(word[i] + " ");
-            }  
-            
-            System.out.println();
+                ui.hangMan(life);
+                life++;
+            }
         }
-
-        else
-        {
-            ui.hangMan(life);
-            life++;
-        }
-
         sc.close();
     }
 } 
