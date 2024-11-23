@@ -7,6 +7,9 @@ public class index
 
         Scanner sc = new Scanner(System.in);
         int life = 1;
+        String clear_screen = "\033[H\033[2J"; //ANSI escape code
+        String move_hangman = "\033[H\033[1;24H";
+        String move_cursor_to_top = "\033[H"; 
 
         // Creating objects for all the classes
         HostInput user = new HostInput();
@@ -16,6 +19,7 @@ public class index
 
         // Taking the word, its size and printing the number of dashes
         char[] re = user.takeInput(sc);
+        System.out.println(clear_screen);
         int size = re.length;
         char[] word = new char[size]; 
         for(int i = 0; i < size; i++)
@@ -44,7 +48,7 @@ public class index
                 {
                     System.out.print(word[i] + " ");
                 }  
-
+                
                 System.out.println();
                 if(Arrays.equals(word, re))
                 {
@@ -55,8 +59,11 @@ public class index
 
             else
             {
+                System.out.print(clear_screen);
+                System.out.print(move_hangman);
                 ui.hangMan(life);
                 life++;
+                System.out.print(move_cursor_to_top);
             }
         }
         sc.close();

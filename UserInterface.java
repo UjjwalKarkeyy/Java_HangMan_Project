@@ -13,11 +13,12 @@ public class UserInterface
 
     void hangMan(int life) 
     {
+        String move_to_right = "\033[]";
         System.out.println("---------");
 
         switch (life) {
             case 1:
-                System.out.println(" |");
+                System.out.println("\033[" + " |");
                 break;
             case 2:
                 System.out.println(" |\n O");
