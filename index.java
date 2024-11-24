@@ -8,7 +8,6 @@ public class index
         Scanner sc = new Scanner(System.in);
         int life = 1;
         String clear_screen = "\033[H\033[2J"; //ANSI escape code
-        String move_hangman = "\033[H\033[1;24H";
         String move_cursor_to_top = "\033[H"; 
 
         // Creating objects for all the classes
@@ -60,10 +59,12 @@ public class index
             else
             {
                 System.out.print(clear_screen);
-                System.out.print(move_hangman);
                 ui.hangMan(life);
                 life++;
                 System.out.print(move_cursor_to_top);
+
+                if(life > 7)
+                    System.out.println("\033[H\033[6;0H"+"!!!YOU ARE DEAD!!!");
             }
         }
         sc.close();
