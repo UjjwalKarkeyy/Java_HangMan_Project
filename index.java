@@ -64,7 +64,14 @@ public class index
                 System.out.print(move_cursor_to_top);
 
                 if(life > 7)
+                {
                     System.out.println("\033[H\033[6;0H"+"!!!YOU ARE DEAD!!!");
+                    System.out.println("The word was: ");
+                    for(char i : re)
+                        System.out.print(i);
+                    
+                    System.out.println();
+                }
             }
         }
         sc.close();
