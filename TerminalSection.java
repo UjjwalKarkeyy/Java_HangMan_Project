@@ -20,7 +20,7 @@ public class TerminalSection {
             moveTo(bottomRow, col);
             System.out.print("-");
         }
-        for (int row = topRow; row <= bottomRow; row++) {
+        for (int row = topRow; row <= bottomRow; row++){
             moveTo(row, leftCol);
             System.out.print("|");
             moveTo(row, rightCol);
